@@ -1,0 +1,60 @@
+* { 
+font-family: sans-serif;
+font-size:30pt;
+color:#D0D0D0;
+}
+
+body {
+  background-color: #1740a0
+}
+table, tr, td {
+  border: 1px dotted green;
+}
+table {
+  width: 100%;
+  padding-top: 20px;
+}
+input[type=range] {
+  width: 100%;
+}
+td {
+  text-align: center;
+    padding-top: 37px;
+}
+div{}
+.headingText {
+
+  border: 1px solid orange;
+  text-align: center;
+  font-size: 50pt;
+}
+button {
+	 background-color: #2196F3;
+	 color: white;
+	 font-size: 90pt;
+	 border-radius: 15px;
+	 padding: 40px;
+}
+#mapWrapper {
+	width: 400px;
+	height: 800px;
+	position:relative;
+}
+#mapWrapper img {
+	width: 100%;
+	position:absolute;
+	top: 0;
+}
+#mapSection {
+	border: 3px dotted orange;
+}
+#parameterControlSection {
+	border: 3px dotted green;
+	text-align: center;
+	margin-left: 25px;
+    margin-right: 25px;
+}
+#mapSection button {
+    font-size: 41px;
+    padding: 3px 24px;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SnowWizard</title>
+<link rel="stylesheet" type="text/css" href="css/base.css"/>
+<script type="text/javascript" src="js/base.js"></script>
+
+</head>
+
+<body>
+
+<div id="parameterControlSection">
+    <div class="headingText">Settings</div>
+    <table>
+      <tr>
+        <td colspan="2">ENERGY</td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="range" id="energy" value="50"/>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: left;">LOW</td>
+        <td style="text-align: right;">HIGH</td>
+      </tr>
+      <tr>
+        <td colspan="2">SKILL</td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="range" id="skill" value="50"/>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: left;">LOW</td>
+        <td style="text-align: right;">HIGH</td>
+      </tr>
+    </table>
+
+	<br/>
+	<button onclick="showRuns()">GO</button>
+</div>
+<div id="mapSection" style="display: none;">
+	<div class="headingText">
+    	<button onclick="hideRuns()">BACK</button>
+    	Runs
+    </div>
+	
+    <div id="mapWrapper">
+        <img src="img/mapBuller.png"/>
+        <img src="img/runs/bourkest.png" id="bourkest" style="display:none;"/>
+        <img src="img/runs/bullrun.png" id="bullrun" style="display:none;"/>
+        <img src="img/runs/burnedhut.png" id="burnedhut" style="display:none;"/>
+        <img src="img/runs/chamois.png" id="chamois" style="display:none;"/>
+        <img src="img/runs/fannys.png" id="fannys" style="display:none;"/>
+        <img src="img/runs/summit.png" id="summit" style="display:none;"/>
+    </div>
+</div>
+</body>
+</html>
