@@ -1,19 +1,19 @@
-
+/*
 var runs = [
- {name:"bourkest",level:10}
-,{name:"baldy",level:30}
-,{name:"littlebullerspur",level:40}
-,{name:"wombat",level:50}
-,{name:"shakeyknees",level:40}
-,{name:"cowcamp",level:80}
-,{name:"fannys",level:100}
-,{name:"summit",level:50}
-,{name:"howqua",level:60}
-,{name:"mensdownhill",level:70}
-,{name:"womansdownhill",level:70}
-,{name:"standard",level:40}
+ {id:"bourkest",difficulty:10}
+,{id:"baldy",difficulty:30}
+,{id:"littlebullerspur",difficulty:40}
+,{id:"wombat",difficulty:50}
+,{id:"shakeyknees",difficulty:40}
+,{id:"cowcamp",difficulty:80}
+,{id:"fannysfinish",difficulty:100}
+,{id:"summit",difficulty:50}
+,{id:"howqua",difficulty:60}
+,{id:"mensdownhill",difficulty:70}
+,{id:"womansdownhill",difficulty:70}
+,{id:"standard",difficulty:40}
 ];
-
+*/
 
 function showRuns(sMessage) {
 	//debugger;
@@ -22,32 +22,46 @@ function showRuns(sMessage) {
 	var sValueSkill =  document.querySelector("#skill").value;
 	var nValueSkill = parseInt(sValueSkill);
 	var sOut = "";
-	
+
 	var nValueTotal = (nValueEnergy + nValueSkill) / 2;
 	for (var i = 0; i < runs.length; i++){
-		if (runs[i].level >= nValueTotal){
-			//alert (sValueEnergy + " " + runs[i].name + " " + runs[i].level);	
-			sOut += nValueTotal + " " + runs[i].name + " " + runs[i].level + "\n";
+		if (runs[i].difficulty >= nValueTotal){
+			//alert (sValueEnergy + " " + runs[i].id + " " + runs[i].difficulty);
+			sOut += nValueTotal + " " + runs[i].id + " " + runs[i].difficulty + "\n";
 			try {
-				var imgRun = document.querySelector("#" + runs[i].name);
+				var imgRun = document.querySelector("#" + runs[i].id);
 				imgRun.style.display = "";
 			} catch (e){}
 		} else {
 			try {
-				var imgRun = document.querySelector("#" + runs[i].name);
+				var imgRun = document.querySelector("#" + runs[i].id);
 				imgRun.style.display = "none";
 			} catch (e){}
 		}
 	}
 	//alert(sOut);
 	var divRuns = document.querySelector("#mapSection");
-	divRuns.style.display = "";	
+	divRuns.style.display = "";
 	var divSettings = document.querySelector("#parameterControlSection");
 	divSettings.style.display = "none";
 }
 function hideRuns() {
 	var divRuns = document.querySelector("#mapSection");
-	divRuns.style.display = "none";	
+	divRuns.style.display = "none";
 	var divSettings = document.querySelector("#parameterControlSection");
 	divSettings.style.display = "";
+}
+
+function doOnLoad() {
+	/*
+	<div id="mapWrapper">
+	<img src="img/mapBuller.png"/>
+	<img src="img/runs/wombat.png" id="wombat" style="display:none;"/>
+	*/
+	var divMap = document.querySelector("#mapWrapper");
+	var sOut = "<img src=\"img/mapBuller.png\"/>";
+	for (var iR = 0; iR < runs.length; iR++) {
+		sOut += "<img src=\"img/runs/" + runs[iR].id + ".png\" id=\"" + runs[iR].id + "\" style=\"display:none;\"/>";
+	}
+	divMap.innerHTML = sOut;
 }

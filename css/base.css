@@ -1,7 +1,9 @@
 * {
-font-family: sans-serif;
-font-size:30pt;
-color:#D0D0D0;
+	font-family: sans-serif;
+	font-size:30pt;
+	color:#D0D0D0;
+	padding: 0;
+	margin: 0;
 }
 
 body {
@@ -23,10 +25,10 @@ td {
 }
 div{}
 .headingText {
-
-  border: 1px solid orange;
-  text-align: center;
-  font-size: 50pt;
+	position: relative;
+	border: 1px solid orange;
+	text-align: center;
+	font-size: 50pt;
 }
 button {
 	 background-color: #2196F3;
@@ -55,6 +57,9 @@ button {
     margin-right: 25px;
 }
 #mapSection button {
-    font-size: 41px;
-    padding: 3px 24px;
+	font-size: 41px;
+	padding: 3px 24px;
+	position: absolute;
+	left: 10px;
+	top: 7px;
 }

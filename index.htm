@@ -3,12 +3,11 @@
 <head>
 <title>SnowWizard</title>
 <link rel="stylesheet" type="text/css" href="css/base.css"/>
+<link rel="stylesheet" type="text/css" href="css/range.css"/>
+<script type="text/javascript" src="js/data.runs.js"></script>
 <script type="text/javascript" src="js/base.js"></script>
-
 </head>
-
-<body>
-
+<body onload="doOnLoad();">
 <div id="parameterControlSection">
     <div class="headingText">Settings</div>
     <table>
@@ -17,7 +16,7 @@
       </tr>
       <tr>
         <td colspan="2">
-          <input type="range" id="energy" value="50"/>
+          <input type="range" id="energy" value="50" class="settingSlider">
         </td>
       </tr>
       <tr>
@@ -29,7 +28,7 @@
       </tr>
       <tr>
         <td colspan="2">
-          <input type="range" id="skill" value="50"/>
+          <input type="range" id="skill" value="50" class="settingSlider">
         </td>
       </tr>
       <tr>
@@ -48,23 +47,23 @@
     </div>
 
     <div id="mapWrapper">
-        <img src="img/mapBuller.png"/>
-        <img src="img/runs/bourkest.png" id="bourkest" style="display:none;"/>
-        <img src="img/runs/bullrun.png" id="bullrun" style="display:none;"/>
-        <img src="img/runs/burnedhutspur.png" id="burnedhutspur" style="display:none;"/>
-        <img src="img/runs/chamois.png" id="chamois" style="display:none;"/>
-		  <img src="img/runs/cowcamp.png" id="cowcamp" style="display:none;"/>
-        <img src="img/runs/fannysfinish.png" id="fannysfinish" style="display:none;"/>
-		  <img src="img/runs/howqua.png" id="howqua" style="display:none;"/>
-		  <img src="img/runs/littlebullerspur.png" id="littlebullerspur`" style="display:none;"/>
-		  <img src="img/runs/mensdownhill.png" id="mensdownhill" style="display:none;"/>
-		  <img src="img/runs/shakeyknees.png" id="shakeyknees" style="display:none;"/>
-		  <img src="img/runs/standard.png" id="standard" style="display:none;"/>
-        <img src="img/runs/summit.png" id="summit" style="display:none;"/>
-		  <img src="img/runs/womansdownhill.png" id="womansdownhill" style="display:none;"/>
-		  <img src="img/runs/wombat.png" id="wombat" style="display:none;"/>
-
-
+		<!--
+		<img src="img/mapBuller.png"/>
+		<img src="img/runs/bourkest.png" id="bourkest" style="display:none;"/>
+		<img src="img/runs/bullrun.png" id="bullrun" style="display:none;"/>
+		<img src="img/runs/burnedhutspur.png" id="burnedhutspur" style="display:none;"/>
+		<img src="img/runs/chamois.png" id="chamois" style="display:none;"/>
+		<img src="img/runs/cowcamp.png" id="cowcamp" style="display:none;"/>
+		<img src="img/runs/fannysfinish.png" id="fannysfinish" style="display:none;"/>
+		<img src="img/runs/howqua.png" id="howqua" style="display:none;"/>
+		<img src="img/runs/littlebullerspur.png" id="littlebullerspur`" style="display:none;"/>
+		<img src="img/runs/mensdownhill.png" id="mensdownhill" style="display:none;"/>
+		<img src="img/runs/shakeyknees.png" id="shakeyknees" style="display:none;"/>
+		<img src="img/runs/standard.png" id="standard" style="display:none;"/>
+		<img src="img/runs/summit.png" id="summit" style="display:none;"/>
+		<img src="img/runs/womansdownhill.png" id="womansdownhill" style="display:none;"/>
+		<img src="img/runs/wombat.png" id="wombat" style="display:none;"/>
+		-->
     </div>
 </div>
 </body>
