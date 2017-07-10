@@ -10,7 +10,7 @@ var runs = [
 ,{name:"summit",level:50}
 ,{name:"howqua",level:60}
 ,{name:"mensdownhill",level:70}
-,{name:"womansdownhill",level:70}
+,{name:"womensdownhill",level:70}
 ,{name:"standard",level:40}
 ];
 

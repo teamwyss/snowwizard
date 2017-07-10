@@ -42,7 +42,7 @@ var testManager = {
 			if (!isRunExpected) {
 				sType = "fail";
 				sFailMsg = " <b>(not-expected)</b>";
-				sDebugOut += "\t,runs." + oResults.runs[iRunAll].id + "<br/>";
+				sDebugOut += "\t,runsDict." + oResults.runs[iRunAll].id + "<br/>";
 			} else {
 				sFoundRuns += oResults.runs[iRunAll].id + ",";
 			}
@@ -189,9 +189,32 @@ function doOnLoad() {
 			,expectedRuns: [
 				 runsDict.cowcamp
 				,runsDict.mensdownhill
-				,runsDict.womansdownhill
+				,runsDict.womensdownhill
 				,runsDict.bloodyhell
-				,runsDict.boggycreek			]
+				,runsDict.boulders
+				,runsDict.chaletcreek
+				,runsDict.chamois
+				,runsDict.cut73
+				,runsDict.damrun
+				,runsDict.elephantrun
+				,runsDict.fallline
+				,runsDict.fannysfinish
+				,runsDict.fastone
+				,runsDict.federation
+				,runsDict.funnel
+				,runsDict.hoggsback
+				,runsDict.howqua
+				,runsDict.outeredge
+				,runsDict.plughole
+				,runsDict.powderkeg
+				,runsDict.robins
+				,runsDict.roughcut
+				,runsDict.scvhutrun
+				,runsDict.slalomgully
+				,runsDict.sunvalley
+				,runsDict.village
+				,runsDict.woodrun
+				,runsDict.yurredla			]
 		};
 		testManager.runTest(oTestData);
 	}
@@ -204,11 +227,26 @@ function doOnLoad() {
 				,["energy", 50]
 			]
 			,expectedRuns: [
-				 runsDict.howqua
-				,runsDict.boomerang
+				 runsDict.boomerang
 				,runsDict.standard
 				,runsDict.summit
 				,runsDict.wombat
+				,runsDict.boggycreek
+				,runsDict.brumby
+				,runsDict.cattlemanstrail
+				,runsDict.chute
+				,runsDict.colt
+				,runsDict.crosscut
+				,runsDict.familyrun
+				,runsDict.laycockslane
+				,runsDict.littlebullerspur
+				,runsDict.shakeyknees
+				,runsDict.skyline
+				,runsDict.tirol
+				,runsDict.vista
+				,runsDict.waler
+				,runsDict.wenzelsweave
+				,runsDict.whiskeycreektrail
 			]
 		};
 		testManager.runTest(oTestData);
@@ -222,11 +260,26 @@ function doOnLoad() {
 				,["energy", 45]
 			]
 			,expectedRuns: [
-				 runsDict.howqua
-				,runsDict.standard
+				 runsDict.standard
 				,runsDict.summit
 				,runsDict.wombat
 				,runsDict.boomerang
+				,runsDict.boggycreek
+				,runsDict.brumby
+				,runsDict.cattlemanstrail
+				,runsDict.chute
+				,runsDict.colt
+				,runsDict.crosscut
+				,runsDict.familyrun
+				,runsDict.laycockslane
+				,runsDict.littlebullerspur
+				,runsDict.shakeyknees
+				,runsDict.skyline
+				,runsDict.tirol
+				,runsDict.vista
+				,runsDict.waler
+				,runsDict.wenzelsweave
+				,runsDict.whiskeycreektrail
 			]
 		};
 		testManager.runTest(oTestData);
@@ -242,10 +295,19 @@ function doOnLoad() {
 			,expectedRuns: [
 				 //runsDict.littlebullerspur
 				 runsDict.shakeyknees
-				,runsDict.standard
 				,runsDict.summit
 				,runsDict.wombat
 				,runsDict.boomerang
+				,runsDict.baldy
+				,runsDict.burnthutspur
+				,runsDict.bullrun
+				,runsDict.colt
+				,runsDict.familyrun
+				,runsDict.littlebullerspur
+				,runsDict.skyline
+				,runsDict.tirol
+				,runsDict.wenzelsweave
+				,runsDict.whiskeycreektrail
 			]
 		};
 		testManager.runTest(oTestData);
@@ -261,11 +323,14 @@ function doOnLoad() {
 			,expectedRuns: [
 				 runsDict.bourkest
 				,runsDict.baldy
-				,runsDict.littlebullerspur
-				,runsDict.shakeyknees
-				,runsDict.boulders
-				,runsDict.brumby
+				//,runsDict.littlebullerspur
+				//,runsDict.shakeyknees
+				//,runsDict.boulders
+				//,runsDict.brumby
 				,runsDict.bullrun
+				,runsDict.burnthutspur
+				,runsDict.gliders
+				,runsDict.happyfeet
 			]
 		};
 		testManager.runTest(oTestData);
@@ -279,9 +344,11 @@ function doOnLoad() {
 				,["energy", 0]
 			]
 			,expectedRuns: [
-				 runsDict.burnthutspur
-				 ,runsDict.boulders
-				 ,runsDict.brumby
+				 //runsDict.burnthutspur
+				 //,runsDict.boulders
+				 //,runsDict.brumby
+				  runsDict.gliders
+				 ,runsDict.happyfeet
 			]
 		};
 		testManager.runTest(oTestData);
@@ -295,13 +362,15 @@ function doOnLoad() {
 				,["energy", 0]
 			]
 			,expectedRuns: [
-				runsDict.baldy
+				 runsDict.baldy
 				,runsDict.bourkest
-				,runsDict.burnthutspur
-				,runsDict.littlebullerspur
-				,runsDict.boulders
-				,runsDict.brumby
-				,runsDict.bullrun
+				//,runsDict.burnthutspur
+				//,runsDict.littlebullerspur
+				//,runsDict.boulders
+				//,runsDict.brumby
+				//,runsDict.bullrun
+				,runsDict.gliders
+				,runsDict.happyfeet
 			]
 		};
 		testManager.runTest(oTestData);

@@ -1,6 +1,12 @@
 
 var decisionEngine = {
 	init: function(){}
+	,isDebug: true
+	,debug: function(sOut) {
+		if (this.isDebug) {
+			console.log(sOut);
+		}
+	}
 	,params: {
 		// Level values for this are set by other parts of the app.
 		skill:50
@@ -14,13 +20,21 @@ var decisionEngine = {
 		}
 		this.params[sParamId] = iLevel;
 	}
+	,decideRunsAsString: function(){
+		var oResult = this.decideRuns();
+		var sOut = ",";
+		for (var iR = 0; iR < oResult.runs.length; iR++) {
+			sOut += oResult.runs[iR].id + ",";
+		}
+		return sOut;
+	}
 	,decideRuns: function(){
 		/*
 		 * The decisionEngine must have been given a series of parameters.
 		 * EG: {skill: 87, energy: 30}
 		 * This will be converted to a list of run objects in an object.
 		 *		See code below in the oOut object.
-		 *     v min          v max
+		 *    v min           v max
 		 * |--<=======X=======>------------|
 		 *            ^ niveau
 		 * |nnYYYYYYYYYYYYYYYYYnnnnnnnnnnnn| where n=do not select run, Y=select.
@@ -67,10 +81,13 @@ var decisionEngine = {
 		*/
 		for (var iR = 0; iR < runs.length; iR++) {
 			var runTemp = runs[iR];
+			//this.debug("checking:[id:" + runTemp.id + ",difficulty:" + runTemp.difficulty + "] against oOut:[min:" + oOut.min + ",max:" + oOut.max + "}");
 			if (
-				(runTemp.difficulty >= oOut.min)
+				(runTemp.difficulty >= 0)
+				&& (runTemp.difficulty >= oOut.min)
 				&& (runTemp.difficulty <= oOut.max)
 			) {
+				//(runTemp.label);
 				oOut.runs.push(runTemp);
 			}
 		}

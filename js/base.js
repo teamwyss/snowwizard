@@ -10,7 +10,7 @@ var runs = [
 ,{id:"summit",difficulty:50}
 ,{id:"howqua",difficulty:60}
 ,{id:"mensdownhill",difficulty:70}
-,{id:"womansdownhill",difficulty:70}
+,{id:"womensdownhill",difficulty:70}
 ,{id:"standard",difficulty:40}
 ];
 */
@@ -23,6 +23,7 @@ function showRuns(sMessage) {
 	var nValueSkill = parseInt(sValueSkill);
 	var sOut = "";
 
+	/*
 	var nValueTotal = (nValueEnergy + nValueSkill) / 2;
 	for (var i = 0; i < runs.length; i++){
 		if (runs[i].difficulty >= nValueTotal){
@@ -38,6 +39,18 @@ function showRuns(sMessage) {
 				imgRun.style.display = "none";
 			} catch (e){}
 		}
+	}
+	*/
+	decisionEngine.setParamLevel("energy", nValueEnergy);
+	decisionEngine.setParamLevel("skill", nValueSkill);
+	var sResults = decisionEngine.decideRunsAsString();
+	for (var i = 0; i < runs.length; i++){
+		var sDisplay = "";
+		if (sResults.indexOf("," + runs[i].id + ",") == -1) {
+			sDisplay = "none";
+		}
+		var imgRun = document.querySelector("#" + runs[i].id);
+		imgRun.style.display = sDisplay;
 	}
 	//alert(sOut);
 	var divRuns = document.querySelector("#mapSection");
