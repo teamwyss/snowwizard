@@ -39,10 +39,10 @@ var runs = [
 	,{id:"outeredge", label:"Outer Edge", difficulty:85, show:true}
 	,{id:"plughole", label:"Plug Hole", difficulty:78, show:true}
 	,{id:"powderkeg", label:"Powder Keg", difficulty:90, show:true}
-	//,{id:"ridgerun", label:"Ridge Run", difficulty:85, show:false}
+	,{id:"ridgerun", label:"Ridge Run", difficulty:85, show:false}
 	,{id:"robins", label:"Robin's", difficulty:90, show:true}
 	,{id:"roughcut", label:"Rough Cut", difficulty:75, show:true}
-	//,{id:"rushrun", label:"Rush Run", difficulty:80, show:false}
+	,{id:"rushrun", label:"Rush Run", difficulty:80, show:false}
 	//,{id:"stchristopher", label:"St Christopher", difficulty:70, show:false}
 	,{id:"scvhutrun", label:"SCV Hut Run", difficulty:75, show:true}
 	,{id:"shakeyknees", label:"Shakey Knees", difficulty:45, show:true}
@@ -52,11 +52,11 @@ var runs = [
 	,{id:"summit", label:"Summit", difficulty:45, show:true}
 	//,{id:"summitaccess", label:"Summit Access", difficulty:40, show:false}
 	//,{id:"summitblack", label:"Summit Black", difficulty:75, show:false}
-	//,{id:"summitslide", label:"Summit Slide", difficulty:60, show:false}
-	,{id:"sunvalley", label:"Sun Valley", difficulty:75, show:true}
+	,{id:"summitslide", label:"Summit Slide", difficulty:60, show:false}
+	,{id:"sunvalley",	label:"Sun Valley", difficulty:75, show:true}
 	//,{id:"thechutes", label:"The Chutes", difficulty:95, show:false}
-	,{id:"tirol", label:"Tirol", difficulty:50, show:true}
-	//,{id:"thulkes", label:"Thulkes", difficulty:85, show:false}
+	,{id:"tirol", 	label:"Tirol", difficulty:50, show:true}
+	,{id:"thulkes", label:"Thulkes", difficulty:85, show:false}
 	,{id:"village", label:"Village", difficulty:70, show:true}
 	,{id:"vista", label:"Vista", difficulty:55, show:true}
 	,{id:"waler", label:"Waler", difficulty:55, show:false}
@@ -73,14 +73,17 @@ var runs = [
 	//,{id:"zwierszigzag", label:"Zwier's Zig Zag", difficulty:80, show:false}
 ];
 
+var sOut = "";
 for (var iR = 0; iR < runs.length; iR++) {
 	var run = runs[iR];
+	sOut += "\n" + run.id;
 	if (run.difficulty == 0) {
 		run.difficulty = -10; //Math.max(Math.round(iR * 1.5), 99);
-		console.log(run.id + " :: " + run.difficulty);
+		//c onsole.log(run.id + " :: " + run.difficulty);
 	}
 	runsDict[run.id] = run;
 }
+console.log(sOut);
 /*
 for (var sRunName in runs) {
 	if (this.runs.hasOwnProperty(sRunName)) {

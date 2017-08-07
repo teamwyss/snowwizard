@@ -16,7 +16,7 @@ table, tr, td {
 	border: 1px dotted green;
 }
 table {
-		width: 100%;
+	width: 100%;
 	padding-top: 20px;
 }
 input[type=range] {
@@ -25,6 +25,7 @@ input[type=range] {
 td {
 	text-align: center;
 	padding-top: 37px;
+	color: rgba(255,255,255,0.8)
 }
 div{}
 .headingText {
@@ -36,9 +37,14 @@ div{}
 button {
 	 background-color: #2196F3;
 	 color: white;
+	 padding: 14px 20px;
+}
+button.buttonBig {
+	 background-color: #2196F3;
+	 color: white;
 	 font-size: 90pt;
 	 border-radius: 15px;
-	 padding: 40px;
+	 padding: 20px 40px;
 }
 #mapWrapper {
 	width: 100%;
@@ -53,18 +59,34 @@ button {
 #mapSection {
 	border: 3px dotted orange;
 }
+#mapSection .headingText {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border: 1px solid yellow;
+    width: 100%;
+}
 #parameterControlSection {
 	border: 3px dotted green;
 	text-align: center;
 	margin-left: 25px;
 	margin-right: 25px;
+	zoom:100%;
 }
 #mapSection button {
 	font-size: 41px;
 	padding: 3px 24px;
-	position: absolute;
+	XXXposition: absolute;
 	left: 10px;
 	top: 7px;
+}
+.iconSection td {
+    padding-top: 150px;
+}
+.paramHeadSection td {
+	color: #290354;
+	font-size: 50px;
 }
 .wellSection {
 	background-color: rgba(255,255,255,0.3);

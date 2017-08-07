@@ -22,7 +22,8 @@ input[type=range].settingSlider::-webkit-slider-thumb {
   height: 49px;
   width: 49px;
   border-radius: 50%;
-  background: #ffffff;
+  XXbackground: #ffffff;
+  background: #290354;
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -11px;

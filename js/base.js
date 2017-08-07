@@ -15,7 +15,12 @@ var runs = [
 ];
 */
 
-function showRuns(sMessage) {
+var g_iBrowserWidth = null;
+var g_iMapWidth = 760;
+var g_iMinMapZoom = null;
+var g_iMaxMapZoom = 400;
+
+function showRuns() {
 	//debugger;
 	var sValueEnergy =  document.querySelector("#energy").value;
 	var nValueEnergy = parseInt(sValueEnergy);
@@ -23,24 +28,6 @@ function showRuns(sMessage) {
 	var nValueSkill = parseInt(sValueSkill);
 	var sOut = "";
 
-	/*
-	var nValueTotal = (nValueEnergy + nValueSkill) / 2;
-	for (var i = 0; i < runs.length; i++){
-		if (runs[i].difficulty >= nValueTotal){
-			//alert (sValueEnergy + " " + runs[i].id + " " + runs[i].difficulty);
-			sOut += nValueTotal + " " + runs[i].id + " " + runs[i].difficulty + "\n";
-			try {
-				var imgRun = document.querySelector("#" + runs[i].id);
-				imgRun.style.display = "";
-			} catch (e){}
-		} else {
-			try {
-				var imgRun = document.querySelector("#" + runs[i].id);
-				imgRun.style.display = "none";
-			} catch (e){}
-		}
-	}
-	*/
 	decisionEngine.setParamLevel("energy", nValueEnergy);
 	decisionEngine.setParamLevel("skill", nValueSkill);
 	var sResults = decisionEngine.decideRunsAsString();
@@ -53,10 +40,42 @@ function showRuns(sMessage) {
 		imgRun.style.display = sDisplay;
 	}
 	//alert(sOut);
+	showMapSection();
+}
+function showMapSection(){
+	zoomRuns(-100);
 	var divRuns = document.querySelector("#mapSection");
 	divRuns.style.display = "";
 	var divSettings = document.querySelector("#parameterControlSection");
 	divSettings.style.display = "none";
+}
+function safeParseInt(vIn) {
+	if (isNaN(vIn)) {
+		return iDefault;
+	}
+	return parseInt(vIn);
+}
+
+function zoomRuns(iChange) {
+	var ui = document.querySelector("#mapWrapper");
+	var iCurrentZoom = 100;
+	var sCurrentZoom = ui.style.zoom;
+	if (sCurrentZoom != "") {
+		sCurrentZoom = sCurrentZoom.replace("px", "").replace("%", "");
+		iCurrentZoom = safeParseInt(sCurrentZoom, 100);
+	}
+	var iNewZoom = (iCurrentZoom + iChange);
+	iNewZoom = iNewZoom + iChange;
+	iNewZoom = Math.max(Math.min(iNewZoom, g_iMaxMapZoom), g_iMinMapZoom);
+	console.log("[" + iNewZoom + "]");
+	ui.style.zoom = iNewZoom + "%";
+}
+function showAllRuns() {
+	for (var i = 0; i < runs.length; i++){
+		var imgRun = document.querySelector("#" + runs[i].id);
+		imgRun.style.display = "";
+	}
+	showMapSection();
 }
 function hideRuns() {
 	var divRuns = document.querySelector("#mapSection");
@@ -71,10 +90,18 @@ function doOnLoad() {
 	<img src="img/mapBuller.png"/>
 	<img src="img/runs/wombat.png" id="wombat" style="display:none;"/>
 	*/
+	/*
 	var divMap = document.querySelector("#mapWrapper");
 	var sOut = "<img src=\"img/mapBuller.png\"/>";
 	for (var iR = 0; iR < runs.length; iR++) {
 		sOut += "<img src=\"img/runs/" + runs[iR].id + ".png\" id=\"" + runs[iR].id + "\" style=\"display:none;\"/>";
 	}
 	divMap.innerHTML = sOut;
+	*/
+	g_iBrowserWidth = window.innerWidth;
+	g_iMinMapZoom = ((g_iBrowserWidth * 100) / g_iMapWidth);
+	zoomRuns(-100);
+	
+	//alert("" + window.innerWidth + " # " + document.documentElement.clientWidth + " # " + document.body.clientWidth);
+	
 }
