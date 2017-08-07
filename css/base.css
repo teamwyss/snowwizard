@@ -7,21 +7,24 @@
 }
 
 body {
-  background-color: #1740a0
+	background-color: #20b798;
+	background-image: url(../img/mapBullerBlur.png);
+	background-repeat: no-repeat;
+	background-size: 100% 140%;
 }
 table, tr, td {
-  border: 1px dotted green;
+	border: 1px dotted green;
 }
 table {
-  width: 100%;
-  padding-top: 20px;
+		width: 100%;
+	padding-top: 20px;
 }
 input[type=range] {
-  width: 100%;
+	width: 100%;
 }
 td {
-  text-align: center;
-    padding-top: 37px;
+	text-align: center;
+	padding-top: 37px;
 }
 div{}
 .headingText {
@@ -54,7 +57,7 @@ button {
 	border: 3px dotted green;
 	text-align: center;
 	margin-left: 25px;
-    margin-right: 25px;
+	margin-right: 25px;
 }
 #mapSection button {
 	font-size: 41px;
@@ -62,4 +65,14 @@ button {
 	position: absolute;
 	left: 10px;
 	top: 7px;
+}
+.wellSection {
+	background-color: rgba(255,255,255,0.3);
+}
+.wellSection td {
+    XXXborder: 1px solid red;
+    padding: 20px;
+}
+img#icnPageMain {
+	width: 400px;
 }

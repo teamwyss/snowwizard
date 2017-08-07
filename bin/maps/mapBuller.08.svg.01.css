@@ -1,0 +1,14 @@
+
+svg {
+	background-image: url(mapBuller.08.background.02.png);
+	background-size: contain;
+	background-size: inherit;
+}
+
+line, path, polyline {
+	stroke-width: 3;
+}
+
+g#fannys_finish path {
+	XXXstroke: red;
+}

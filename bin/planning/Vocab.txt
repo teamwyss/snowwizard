@@ -1,0 +1,47 @@
+SnowWizard
+
+Vocabulary General
+
+Agile Develpment
+	Set of rules to guide project development, with the following guidelines:
+		Iterative development, from a very basic solution (MVP), until time/money runs out.
+		Embracing change, allowing great new ideas for the entire project.
+		Breaking the project into small tasks, and using each to determine velocity.
+		Reliance on good tools
+Story
+	A chunk of development that delivers some positive outcome to the app.
+	Each story will have number, title, story-points and description.
+	For example:
+	number:	001
+	title: 	Create iOS icon.
+	points:	5
+	description: As a user I want to navigate to the app on my phone and see a cool icon.
+	Numbers are given sequentially, and never re-used. They help identify a story quickly.
+	Title must be short and clear.
+	Points are from 
+		 1 = easy
+		 2 = quick with some work
+		 3 = medium, about half a days work
+		 5 = a fair bit of work
+		 8 = quite tricky
+		13 = big task, quite complex.
+		21 = massive, needs to be broken into smaller tasks.
+	Description is written from the perspective of a person, usually a user.
+Velocity
+	Speed at which the project is progressing.
+	This is measured by the rate story points are being completed compared to time left.
+	EG: if 36 points are done, and 50% of time is left, you know you can do another 36.
+MVP
+	Minimum Viable Product. 
+	The basic, working app at the end of iteration 1. This may not be very useful, but working.
+Iteration
+	Development cycle repeated until the project is done.
+	Each iteration delivers the app in a working state, with planning development and testing done.
+	Every iteration has a showcase, where the app is presented to an audience of pigs and chickens.
+Agile Tools
+	Code repository ("code repo"): online place where you back up code.
+	Kanban wall: wall or web page where stories are listed as tickets. 
+		Stories are moved from left to right as they progress.
+	Showcase
+
+

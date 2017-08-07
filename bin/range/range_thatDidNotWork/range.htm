@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)http://brennaobrien.com/blog/2014/05/style-input-type-range-in-every-browser.html -->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title> How to Style Input Type Range in Chrome, Firefox, and IE |  Brenna O'Brien</title>
+    <meta name="description" content="Brenna O&#39;Brien is a web developer in Toronto, Canada.">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/png" href="http://brennaobrien.com/favicon.ico">
+    <link href="./range_files/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./range_files/style.css">
+    <div class="fit-vids-style">­<style>               .fluid-width-video-wrapper {                 width: 100%;                              position: relative;                       padding: 0;                            }                                                                                   .fluid-width-video-wrapper iframe,        .fluid-width-video-wrapper object,        .fluid-width-video-wrapper embed {           position: absolute;                       top: 0;                                   left: 0;                                  width: 100%;                              height: 100%;                          }                                       </style></div><div class="fit-vids-style">­<style>               .fluid-width-video-wrapper {                 width: 100%;                              position: relative;                       padding: 0;                            }                                                                                   .fluid-width-video-wrapper iframe,        .fluid-width-video-wrapper object,        .fluid-width-video-wrapper embed {           position: absolute;                       top: 0;                                   left: 0;                                  width: 100%;                              height: 100%;                          }                                       </style></div><script src="./range_files/ga.js"></script><script src="./range_files/modernizr-2.6.2.min.js"></script>
+    <link rel="stylesheet" href="./range_files/prettify-tomorrow-theme.css">
+
+</head>
+<body style="zoom: 1;">
+    <header class="global">
+
+        <h1 class="brand"><a href="http://brennaobrien.com/">BrennaOBrien</a></h1>
+        <nav class="global">
+
+            <!-- <a  href="/">About</a> -->
+            <a href="http://brennaobrien.com/speaking/">Speaking</a>
+            <a href="http://brennaobrien.com/work/">Work</a>
+            <a class="current" href="http://brennaobrien.com/blog/">Blog</a>
+            <a href="http://brennaobrien.com/blog/2014/05/style-input-type-range-in-every-browser.html#contact" id="contact-link">Contact</a>
+        </nav>
+    </header>
+
+<section class="main">
+	<article class="blog-post" style="min-height: 359.6px;">
+		<header>
+			<div class="blog-title">
+				<h6 class="post-date">02<span> . </span><br>05<span> . </span><br>14</h6>
+				<h1 class="post-title">How to Style Input Type Range in Chrome, Firefox, and IE</h1>
+			</div>
+			<p class="punch">
+				The new HTML5 range input gives you a nifty slider UI component. But of course it looks wildly different and kind of blah across browsers. Don't worry, you can style input[type=range] in any browser!
+			</p>
+		</header>
+		<div class="blog-content">
+		<p>The syntax differs from vendor to vendor, but in all cases, you have two components that need to be styled. The <strong>track</strong> is the long piece representing the range, and the <strong>thumb</strong> is the nub you slide to pick a value. </p>
+
+<p><img class="no-border" src="./range_files/input-range.png" alt="&#39;components of input type range"></p>
+
+<p>It <em>is</em> possible to apply styles directly to <code>input[type=range]</code>, but you may run into cross-browser troubles. Best to take advantage of the vendor specific track and thumb selectors as much as possible.  We'll be using them to recreate this custom styled range slider.</p>
+
+<p><img class="no-border" src="./range_files/custom-slider.png" alt="&#39;components of input type range"></p>
+
+<h3>Webkit based browsers (Chrome, Safari, Opera)</h3>
+
+<p>In webkit based browsers, the track is styled with a special pseudo selector <code>::-webkit-slider-runnable-track</code>, and the thumb with <code>::webkit-slider-thumb</code>.</p>
+
+<p>Custom focus styles can also be applied on the thumb and the track. If you go that route, you'll have to remove default focus styles on the input itself.</p>
+
+<h4><strong>Gotchas</strong></h4>
+
+<p>You'll need to tell webkit you want nothing to do with their default styles by including a <code>-webkit-appearance: none;</code> on both the input and the thumb. </p>
+
+<pre class="prettyprint language-css prettyprinted"><code><span class="pln">input</span><span class="pun">[</span><span class="pln">type</span><span class="pun">=</span><span class="pln">range</span><span class="pun">]{</span><span class="pln">
+    </span><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">appearance</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+input</span><span class="pun">[</span><span class="pln">type</span><span class="pun">=</span><span class="pln">range</span><span class="pun">]::-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">slider</span><span class="pun">-</span><span class="pln">runnable</span><span class="pun">-</span><span class="pln">track </span><span class="pun">{</span><span class="pln">
+    width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">300px</span><span class="pun">;</span><span class="pln">
+    height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">5px</span><span class="pun">;</span><span class="pln">
+    background</span><span class="pun">:</span><span class="pln"> </span><span class="com">#ddd;</span><span class="pln">
+    border</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span><span class="pln">
+    border</span><span class="pun">-</span><span class="pln">radius</span><span class="pun">:</span><span class="pln"> </span><span class="lit">3px</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+input</span><span class="pun">[</span><span class="pln">type</span><span class="pun">=</span><span class="pln">range</span><span class="pun">]::-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">slider</span><span class="pun">-</span><span class="pln">thumb </span><span class="pun">{</span><span class="pln">
+    </span><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">appearance</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span><span class="pln">
+    border</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span><span class="pln">
+    height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">16px</span><span class="pun">;</span><span class="pln">
+    width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">16px</span><span class="pun">;</span><span class="pln">
+    border</span><span class="pun">-</span><span class="pln">radius</span><span class="pun">:</span><span class="pln"> </span><span class="lit">50</span><span class="pun">%;</span><span class="pln">
+    background</span><span class="pun">:</span><span class="pln"> goldenrod</span><span class="pun">;</span><span class="pln">
+    margin</span><span class="pun">-</span><span class="pln">top</span><span class="pun">:</span><span class="pln"> </span><span class="pun">-</span><span class="lit">4px</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+input</span><span class="pun">[</span><span class="pln">type</span><span class="pun">=</span><span class="pln">range</span><span class="pun">]:</span><span class="pln">focus </span><span class="pun">{</span><span class="pln">
+    outline</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+input</span><span class="pun">[</span><span class="pln">type</span><span class="pun">=</span><span class="pln">range</span><span class="pun">]:</span><span class="pln">focus</span><span class="pun">::-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">slider</span><span class="pun">-</span><span class="pln">runnable</span><span class="pun">-</span><span class="pln">track </span><span class="pun">{</span><span class="pln">
+    background</span><span class="pun">:</span><span class="pln"> </span><span class="com">#ccc;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<h3>Firefox</h3>
+
+<p>In Firefox, the track is styled using the <code>::-moz-range-track</code> pseduo selector, and the thumb using <code>::-moz-range-thumb</code>.  </p>
+
+<h4><strong>Gotchas</strong></h4>
+
+<p>There's currently a little bug in Firefox where <code>outline: none</code> doesn't remove focus styles. If you have a solid background colour, you can hack a fix by hiding the outline under a border.</p>
+
+<p>You'll also need to give <code>input[type=range]</code> the same width as your track. It won't expand to contain the track on it's own.</p>
+
+<pre class="prettyprint language-css prettyprinted"><code><span class="pln">input</span><span class="pun">[</span><span class="pln">type</span><span class="pun">=</span><span class="pln">range</span><span class="pun">]{</span><span class="pln">
+    </span><span class="com">/* fix for FF unable to apply focus style bug  */</span><span class="pln">
+    border</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1px</span><span class="pln"> solid white</span><span class="pun">;</span><span class="pln"> 
+
+    </span><span class="com">/*required for proper track sizing in FF*/</span><span class="pln">
+    width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">300px</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+input</span><span class="pun">[</span><span class="pln">type</span><span class="pun">=</span><span class="pln">range</span><span class="pun">]::-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">range</span><span class="pun">-</span><span class="pln">track </span><span class="pun">{</span><span class="pln">
+    width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">300px</span><span class="pun">;</span><span class="pln">
+    height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">5px</span><span class="pun">;</span><span class="pln">
+    background</span><span class="pun">:</span><span class="pln"> </span><span class="com">#ddd;</span><span class="pln">
+    border</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span><span class="pln">
+    border</span><span class="pun">-</span><span class="pln">radius</span><span class="pun">:</span><span class="pln"> </span><span class="lit">3px</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+input</span><span class="pun">[</span><span class="pln">type</span><span class="pun">=</span><span class="pln">range</span><span class="pun">]::-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">range</span><span class="pun">-</span><span class="pln">thumb </span><span class="pun">{</span><span class="pln">
+    border</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span><span class="pln">
+    height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">16px</span><span class="pun">;</span><span class="pln">
+    width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">16px</span><span class="pun">;</span><span class="pln">
+    border</span><span class="pun">-</span><span class="pln">radius</span><span class="pun">:</span><span class="pln"> </span><span class="lit">50</span><span class="pun">%;</span><span class="pln">
+    background</span><span class="pun">:</span><span class="pln"> goldenrod</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="com">/*hide the outline behind the border*/</span><span class="pln">
+input</span><span class="pun">[</span><span class="pln">type</span><span class="pun">=</span><span class="pln">range</span><span class="pun">]:-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">focusring</span><span class="pun">{</span><span class="pln">
+    outline</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1px</span><span class="pln"> solid white</span><span class="pun">;</span><span class="pln">
+    outline</span><span class="pun">-</span><span class="pln">offset</span><span class="pun">:</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1px</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+input</span><span class="pun">[</span><span class="pln">type</span><span class="pun">=</span><span class="pln">range</span><span class="pun">]:</span><span class="pln">focus</span><span class="pun">::-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">range</span><span class="pun">-</span><span class="pln">track </span><span class="pun">{</span><span class="pln">
+    background</span><span class="pun">:</span><span class="pln"> </span><span class="com">#ccc;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<h3>Internet Explorer 10 +</h3>
+
+<p>Input type range is supported in IE10 and above.  We can style the thumb with the <code>::-ms-thumb</code> pseudo, and the track with <code>::-ms-track</code>. </p>
+
+<h4><strong>Gotchas</strong></h4>
+
+<p>IE won't let the thumb overflow the track, <del>so you'll have to settle for a taller track that's at least as big as the thumb.</del>  </p>
+
+<p><strong>Update, 15.10.2014</strong>: The thumb still can't overflow the track, but <a href="https://github.com/Gramcito" target="_blank">Graham Fowler</a> pointed out a clever workaround. We can fake a wide enough track by adding a thick transparent border on the top and bottom of the track. We'll also move most of our styles to <code>::-ms-fill-lower</code> and <code>::-ms-fill-upper</code> instead of <code>::ms-track</code> to make sure things like <code>border-radius</code> render correctly.</p>
+
+<p>To remove the default tick marks, you'll need to set <code>colour: transparent</code> on the track.</p>
+
+<h4><strong>Bonus</strong></h4>
+
+<p>You can also use <code>::-ms-fill-lower</code> and <code>::-ms-fill-upper</code> to further customize the look of the track on either size of the thumb. Here, we've enhanced the UI by styling the lower part with a darker grey.</p>
+
+<p><img class="no-border" src="./range_files/custom-slider-ie-updated.png" alt="&#39;components of input type range"></p>
+
+<pre class="prettyprint language-css prettyprinted"><code><span class="pln">input</span><span class="pun">[</span><span class="pln">type</span><span class="pun">=</span><span class="pln">range</span><span class="pun">]::-</span><span class="pln">ms</span><span class="pun">-</span><span class="pln">track </span><span class="pun">{</span><span class="pln">
+    width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">300px</span><span class="pun">;</span><span class="pln">
+    height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">5px</span><span class="pun">;</span><span class="pln">
+    
+    </span><span class="com">/*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */</span><span class="pln">
+    background</span><span class="pun">:</span><span class="pln"> transparent</span><span class="pun">;</span><span class="pln">
+    
+    </span><span class="com">/*leave room for the larger thumb to overflow with a transparent border */</span><span class="pln">
+    border</span><span class="pun">-</span><span class="pln">color</span><span class="pun">:</span><span class="pln"> transparent</span><span class="pun">;</span><span class="pln">
+    border</span><span class="pun">-</span><span class="pln">width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">6px</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="com">/*remove default tick marks*/</span><span class="pln">
+    color</span><span class="pun">:</span><span class="pln"> transparent</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+input</span><span class="pun">[</span><span class="pln">type</span><span class="pun">=</span><span class="pln">range</span><span class="pun">]::-</span><span class="pln">ms</span><span class="pun">-</span><span class="pln">fill</span><span class="pun">-</span><span class="pln">lower </span><span class="pun">{</span><span class="pln">
+    background</span><span class="pun">:</span><span class="pln"> </span><span class="com">#777;</span><span class="pln">
+    border</span><span class="pun">-</span><span class="pln">radius</span><span class="pun">:</span><span class="pln"> </span><span class="lit">10px</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+input</span><span class="pun">[</span><span class="pln">type</span><span class="pun">=</span><span class="pln">range</span><span class="pun">]::-</span><span class="pln">ms</span><span class="pun">-</span><span class="pln">fill</span><span class="pun">-</span><span class="pln">upper </span><span class="pun">{</span><span class="pln">
+    background</span><span class="pun">:</span><span class="pln"> </span><span class="com">#ddd;</span><span class="pln">
+    border</span><span class="pun">-</span><span class="pln">radius</span><span class="pun">:</span><span class="pln"> </span><span class="lit">10px</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+input</span><span class="pun">[</span><span class="pln">type</span><span class="pun">=</span><span class="pln">range</span><span class="pun">]::-</span><span class="pln">ms</span><span class="pun">-</span><span class="pln">thumb </span><span class="pun">{</span><span class="pln">
+    border</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span><span class="pln">
+    height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">16px</span><span class="pun">;</span><span class="pln">
+    width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">16px</span><span class="pun">;</span><span class="pln">
+    border</span><span class="pun">-</span><span class="pln">radius</span><span class="pun">:</span><span class="pln"> </span><span class="lit">50</span><span class="pun">%;</span><span class="pln">
+    background</span><span class="pun">:</span><span class="pln"> goldenrod</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+input</span><span class="pun">[</span><span class="pln">type</span><span class="pun">=</span><span class="pln">range</span><span class="pun">]:</span><span class="pln">focus</span><span class="pun">::-</span><span class="pln">ms</span><span class="pun">-</span><span class="pln">fill</span><span class="pun">-</span><span class="pln">lower </span><span class="pun">{</span><span class="pln">
+    background</span><span class="pun">:</span><span class="pln"> </span><span class="com">#888;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+input</span><span class="pun">[</span><span class="pln">type</span><span class="pun">=</span><span class="pln">range</span><span class="pun">]:</span><span class="pln">focus</span><span class="pun">::-</span><span class="pln">ms</span><span class="pun">-</span><span class="pln">fill</span><span class="pun">-</span><span class="pln">upper </span><span class="pun">{</span><span class="pln">
+    background</span><span class="pun">:</span><span class="pln"> </span><span class="com">#ccc;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>Here's the full cross-browser code snippet and result.</p>
+
+<iframe width="100%" height="300" src="./range_files/saved_resource.html" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+ 
+		</div>
+	</article>
+</section>
+
+    <footer id="contact" class="global">
+        <div class="contact-intro">
+            <h3>Get in Touch</h3>
+            <h4>Or find me elsewhere on the Internet.<br> I come here often.</h4>
+        </div>
+        <div class="contact-email">
+            <p><a href="mailto:brenna@bren.zone" target="_blank">brenna@bren.zone</a></p>
+        </div>
+        <div class="contact-elsewhere">
+            <ul class="social">
+                <li><a href="http://twitter.com/brnnbrn" class="icon-twitter" title="Twitter" target="_blank"><span>Twitter</span></a></li>
+                <li><a href="http://brnnbrn.tumblr.com/" class="icon-tumblr" title="everything else" target="_blank"><span>Tumblr</span></a></li>
+                <li><a href="https://open.spotify.com/user/brnnbrn" title="Spotify" target="_blank">
+                    <i class="fa fa-spotify social__icon"></i>
+                </a></li>
+                <li><a href="http://codepen.io/brenna" class="icon-codepen" title="CodePen" target="_blank"><span>CodePen</span></a></li>
+                <li><a href="http://github.com/brenna" class="icon-github" title="GitHub" target="_blank"><span>GitHub</span></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="./range_files/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+    <script src="./range_files/plugins.js"></script>
+    <script src="./range_files/prettify.js"></script>
+    <script src="./range_files/main.js"></script>
+    
+    <script>
+        var _gaq=[['_setAccount','UA-19103472-1'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+
+
+
+</body></html>

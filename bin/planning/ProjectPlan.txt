@@ -1,0 +1,59 @@
+
+
+SnowWizard
+
+
+wysssam@birghtongrammar.vic.edu.au
+
+h4. Iteration 0
+Kick off project
+	Dates
+		Milestones
+		Due: Mon 25th of Sep.
+	What is Agile?
+		Iterations
+		Tools
+	What are our goals?
+		Win!
+		Have fun
+		Learn coding
+		Learn project management
+		Presentation skills
+	Code name for project
+Set up project tech
+	Task management - Trello board
+	Shared resource repo (Google Drive?)
+		Versioning strategy.
+	Code editor
+		Atom.io
+Draw screens of all ideas
+Group screens to 
+	MVP
+	Feature backlog
+	App store ready
+Discuss Iteration 1
+
+h4. Iteration 1
+Think of a name
+Set showcase 1 date
+Design base look and feel.
+Design icon
+Code first screen
+Do showcase 1
+
+h4. Iteration 2
+
+
+
+Coding
+	HTML basics
+	JavaScript basics
+
+Questions for Sam
+	Do you have a google account
+	Do you have a Mac or PC?
+Things for David
+	Find simple versioning repo
+	Find simple Kanban tool (Trello?)
+	Print iPhone screen pages
+
