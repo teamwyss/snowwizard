@@ -45,6 +45,7 @@ button.buttonBig {
 	 font-size: 90pt;
 	 border-radius: 15px;
 	 padding: 20px 40px;
+	 margin-bottom:26px;
 }
 #mapWrapper {
 	width: 100%;
@@ -82,7 +83,7 @@ button.buttonBig {
 	top: 7px;
 }
 .iconSection td {
-    padding-top: 150px;
+    padding-top: 15px;
 }
 .paramHeadSection td {
 	color: #290354;
@@ -93,8 +94,8 @@ button.buttonBig {
 }
 .wellSection td {
     XXXborder: 1px solid red;
-    padding: 20px;
+    padding: 15px;
 }
 img#icnPageMain {
-	width: 400px;
+	width: 300px;
 }
