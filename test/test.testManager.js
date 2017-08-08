@@ -29,9 +29,6 @@ var testManager = {
 		sOut += "<h3>" + oTestData.title + " " + sParamsForHeading + "</h3>";
 		sOut += "<table>";
 		sOut += trDiamond("niveau", oResults.niveau);
-		//sOut += trDiamond("niveauMin", oResults.niveauMin);
-		//sOut += trDiamond("niveauMax", oResults.niveauMax);
-		//sOut += trRange("tollerance", oResults.tollerance);
 		sOut += drawTolleranceAndRange(oResults);
 		var sDebugOut = "<br/>";
 		var sFoundRuns = ",";
@@ -214,7 +211,11 @@ function doOnLoad() {
 				,runsDict.sunvalley
 				,runsDict.village
 				,runsDict.woodrun
-				,runsDict.yurredla			]
+				,runsDict.yurredla
+				,runsDict.ridgerun
+				,runsDict.rushrun
+				,runsDict.thulkes
+			]
 		};
 		testManager.runTest(oTestData);
 	}
@@ -242,6 +243,7 @@ function doOnLoad() {
 				,runsDict.littlebullerspur
 				,runsDict.shakeyknees
 				,runsDict.skyline
+				,runsDict.summitslide
 				,runsDict.tirol
 				,runsDict.vista
 				,runsDict.waler
@@ -275,6 +277,7 @@ function doOnLoad() {
 				,runsDict.littlebullerspur
 				,runsDict.shakeyknees
 				,runsDict.skyline
+				,runsDict.summitslide
 				,runsDict.tirol
 				,runsDict.vista
 				,runsDict.waler
