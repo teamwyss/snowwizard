@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TestData SnowWizard</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+<meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=no"/>
+<link rel="stylesheet" type="text/css" href="css/base.css"/>
+<link rel="stylesheet" type="text/css" href="css/range.css"/>
+<link rel="stylesheet" type="text/css" href="css/mapBuller.08.svg.01.css"/>
+<script type="text/javascript" src="js/data.runs.js"></script>
+<script type="text/javascript" src="js/decisionEngine.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+-->
+<style type="text/css">
+* {
+	font-family: Helvetica, Arial, SansSerif;
+	font-size: 10pt;
+}
+table {
+	margin: 20px;
+}
+table tr:first-child td {
+	color: #888;
+	background-color: #CCC;
+}
+table, tr, td {
+	border-collapse: collapse;
+	border-width: 0;
+}
+textarea {
+    width: 90%;
+    height: 500px;
+}
+/*
+tr[even] {
+	XXXbackground-color: #F8F8F8;
+}
+*/
+tr[hide] td {
+	color: #AAA;
+	background-color: #F8F8F8;
+}
+td {
+	padding: 3px 6px;
+	border-bottom: 1px solid #DDD;
+}
+
+</style>
+<script type="text/javascript" src="../js/data.runs.js"></script>
+<script type="text/javascript">
+var isEven = false;
+function el(sXpath) {
+	return document.querySelector(sXpath);
+}
+function toRow(asVars, isShow, isHeading) {
+	isHeading = (typeof isHeading == "undefined") ? false : isHeading;
+	isEven = !isEven;
+	return "<tr" + (isEven ? " even" : "") + (isShow ? "" : " hide") + "><td>" + (asVars.join("</td><td>")) + "</td></tr>";
+}
+function getRunsAsJson() {
+	var sOut = JSON.stringify(runs, "	");
+	sOut = sOut.replace(/\[\{"id"/gm, "[\n\t {\"id\"");
+	sOut = sOut.replace("}]", "}\n]");
+	return sOut.replace(/\},{/gm, "}\n\t,{");
+}
+function doOnLoad() {
+	var sOut = "<table>";
+	sOut += toRow(["Label", "ID", "Difficulty", "Show On Map"]); //, "sIdD", "isIdGuess"]);
+	for (var iR = 0; iR < runs.length; iR++) {
+		var r = runs[iR];
+		var sIdD = r.label.toLowerCase();
+		sIdD = sIdD.replace(/[ ']/gm, "");
+		var isIdGuess = (sIdD == r.id);
+		sOut += toRow([r.label, r.id, r.difficulty, r.show], r.show); //, sIdD, isIdGuess]);
+		//sOut += "<br/>";
+	}
+	sOut += "</table>";
+	sOut += "<textarea>"
+	sOut += getRunsAsJson();
+	sOut += "</textarea>"
+	el("body").innerHTML = sOut;
+}
+</script>
+</head>
+<body onload="doOnLoad();">
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<project basedir="." default="build" name="snowwizard_build">
+ 
+	<!--
+	Build file for deploying HTML5 files for the iOS app.
+	-->
+ 
+	<!-- Propterties -->
+	<property file="build.properties"/>
+	<!-- SRC -->
+	<property name="src_webRoot" value="${properties.src_root}" />
+	<!-- DEST -->
+	<property name="dest_webRoot" value="${properties.dest_root}/WebRoot" />
+ 
+	<!-- [variables] Print common vars. -->
+	<target name="explain" description="Print common vars.">
+		<echo message="Environment:"/>
+		<echo message="  ant.version :::::::::: ${ant.version}"/>
+		<echo message="Source root:  :::::::::: ${src_webRoot}"/>
+		<echo message="Destination root: :::::: ${dest_webRoot}"/>
+	</target>
+ 
+	<!-- [clean] Delete the build and dist directories -->
+	<target name="clean" description="Clean dest dir.">
+		<!--
+		delete dir="${dest_webRoot}/**" failonerror="false" /
+		-->
+		<delete dir="${dest_webRoot}/css" failonerror="false" />
+		<delete dir="${dest_webRoot}/data" failonerror="false" />
+		<delete dir="${dest_webRoot}/htm" failonerror="false" />
+		<delete dir="${dest_webRoot}/img" failonerror="false" />
+		<delete dir="${dest_webRoot}/js" failonerror="false" />
+	</target>
+ 
+	<target name="build" depends="explain,clean" description="Build web resources.">
+ 
+		<!-- CSS -->
+		<!--
+		<copy todir="${dest_webRoot}/css">
+			<fileset dir="${src_webRoot}/css" includes="**/*.css"/>
+		</copy>
+		-->
+		<copy file="${src_webRoot}/css/base.css" todir="${dest_webRoot}/css"/>
+		<copy file="${src_webRoot}/css/mapBuller.08.svg.01.css" todir="${dest_webRoot}/css"/>
+		<copy file="${src_webRoot}/css/range.css" todir="${dest_webRoot}/css"/>
+ 
+		<!-- Data 
+		<copy file="${src_webRoot}/data/data.energyLevels.js" todir="${dest_webRoot}/data"/>
+		<copy file="${src_webRoot}/data/data.runs.js" todir="${dest_webRoot}/data"/>
+		<copy file="${src_webRoot}/data/data.skillLevels.js" todir="${dest_webRoot}/data"/>
+		-->
+ 
+		<!-- HTML -->
+		<copy file="${src_webRoot}/index.htm" todir="${dest_webRoot}"/>
+ 
+		<!-- Image -->
+		<copy file="${src_webRoot}/img/iconAndLettering.png" todir="${dest_webRoot}/img"/>
+		<copy file="${src_webRoot}/img/mapBuller.08.background.02.png" todir="${dest_webRoot}/img"/>
+		<copy file="${src_webRoot}/img/mapBullerBlur.png" todir="${dest_webRoot}/img"/>
+ 
+		<!-- JS -->
+		<copy file="${src_webRoot}/js/base.js" todir="${dest_webRoot}/js"/>
+		<copy file="${src_webRoot}/js/data.runs.js" todir="${dest_webRoot}/js"/>
+		<copy file="${src_webRoot}/js/decisionEngine.js" todir="${dest_webRoot}/js"/>
+		<copy file="${src_webRoot}/js/map.js" todir="${dest_webRoot}/js"/>
+	</target>
+ 
+</project>
