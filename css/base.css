@@ -13,7 +13,7 @@ body {
 	background-size: 100% 140%;
 }
 table, tr, td {
-	border: 1px dotted green;
+	xxborder: 1px dotted green;
 }
 table {
 	width: 100%;
@@ -36,7 +36,7 @@ td {
 div{}
 .headingText {
 	position: relative;
-	border: 1px solid orange;
+	xxborder: 1px solid orange;
 	text-align: center;
 	font-size: 1.66rem;
 }
@@ -64,18 +64,18 @@ button.buttonBig {
 	top: 0;
 }
 #mapSection {
-	border: 3px dotted orange;
+	xxborder: 3px dotted orange;
 }
 #mapSection .headingText {
     position: fixed;
-    top: 0;
+    top: 40px;
     left: 0;
     z-index: 1000;
-    border: 1px solid yellow;
+    xxborder: 1px solid yellow;
     width: 100%;
 }
 #parameterControlSection {
-	border: 3px dotted green;
+	xxxborder: 3px dotted green;
 	text-align: center;
 	margin-left: 25px;
 	margin-right: 25px;

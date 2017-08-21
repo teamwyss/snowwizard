@@ -9,7 +9,7 @@ var runs = [
 	,{id:"bourkest", label:"Bourke St", difficulty:20, show:true}
 	,{id:"brumby", label:"Brumby", difficulty:55, show:true}
 	,{id:"burnthutspur", label:"Burnt Hut Spur", difficulty:30, show:true}
-	,{id:"bullrun", label:"Bull Run", difficulty:30, show:true}
+	,{id:"bullrun", label:"Bull Run", difficulty:80, show:true}
 	//,{id:"canyontrail", label:"Canyon Trail", difficulty:40, show:true}
 	,{id:"cattlemanstrail", label:"Cattleman's Trail", difficulty:60, show:true}
 	,{id:"chaletcreek", label:"Chalet Creek", difficulty:75, show:true}
