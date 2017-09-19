@@ -1,0 +1,71 @@
+	baldy	TAB	Baldy	TAB	25	TAB	true}
+	blizzardracecourse	TAB	Blizzard Racecourse	TAB	50	TAB	false}
+	bloodyhell	TAB	Bloody Hell	TAB	85	TAB	true}
+	boggycreek	TAB	Boggy Creek	TAB	55	TAB	false}
+	boomerang	TAB	Boomerang	TAB	50	TAB	true}
+	boulders	TAB	Boulders	TAB	75	TAB	true}
+	bourkest	TAB	Bourke St	TAB	20	TAB	true}
+	brumby	TAB	Brumby	TAB	55	TAB	true}
+	burnthutspur	TAB	Burnt Hut Spur	TAB	30	TAB	true}
+	bullrun	TAB	Bull Run	TAB	80	TAB	true}
+	canyontrail	TAB	Canyon Trail	TAB	40	TAB	true}
+	cattlemanstrail	TAB	Cattleman's Trail	TAB	60	TAB	true}
+	chaletcreek	TAB	Chalet Creek	TAB	75	TAB	true}
+	chamois	TAB	Chamois	TAB	70	TAB	false}
+	chute	TAB	Chute	TAB	55	TAB	true}
+	colt	TAB	Colt	TAB	50	TAB	true}
+	cowcamp	TAB	Cow Camp	TAB	70	TAB	true}
+	crosscut	TAB	Cross Cut	TAB	55	TAB	true}
+	cut73	TAB	Cut 73	TAB	90	TAB	true}
+	damrun	TAB	Dam Run	TAB	75	TAB	true}
+	elephantrun	TAB	Elephant Run	TAB	75	TAB	true}
+	fallline	TAB	Fall Line	TAB	80	TAB	true}
+	fannysfinish	TAB	Fanny's Finish	TAB	95	TAB	false}
+	familyrun	TAB	Family Run	TAB	35	TAB	true}
+	fastone	TAB	Fast One	TAB	85	TAB	true}
+	federation	TAB	Federation	TAB	85	TAB	true}
+	foxaccess	TAB	Fox Access	TAB	40	TAB	false}
+	funnel	TAB	Funnel	TAB	80	TAB	true}
+	gliders	TAB	Gliders	TAB	5	TAB	false}
+	happyfeet	TAB	Happy Feet	TAB	5	TAB	false}
+	hoggsback	TAB	Hoggs Back	TAB	75	TAB	true}
+	hometrail	TAB	Home Trail	TAB	40	TAB	false}
+	howqua	TAB	Howqua	TAB	70	TAB	true}
+	laycockslane	TAB	Laycock's Lane	TAB	58	TAB	true}
+	littlebullerspur	TAB	Little Buller Spur	TAB	50	TAB	true}
+	mensdownhill	TAB	Men's Downhill	TAB	75	TAB	false}
+	outeredge	TAB	Outer Edge	TAB	85	TAB	true}
+	plughole	TAB	Plug Hole	TAB	78	TAB	true}
+	powderkeg	TAB	Powder Keg	TAB	90	TAB	true}
+	ridgerun	TAB	Ridge Run	TAB	85	TAB	false}
+	robins	TAB	Robin's	TAB	90	TAB	true}
+	roughcut	TAB	Rough Cut	TAB	75	TAB	true}
+	rushrun	TAB	Rush Run	TAB	80	TAB	false}
+	stchristopher	TAB	St Christopher	TAB	70	TAB	false}
+	scvhutrun	TAB	SCV Hut Run	TAB	75	TAB	true}
+	shakeyknees	TAB	Shakey Knees	TAB	45	TAB	true}
+	skyline	TAB	Skyline	TAB	35	TAB	false}
+	slalomgully	TAB	Slalom Gully	TAB	85	TAB	true}
+	standard	TAB	Standard	TAB	55	TAB	true}
+	summit	TAB	Summit	TAB	45	TAB	true}
+	summitaccess	TAB	Summit Access	TAB	40	TAB	false}
+	summitblack	TAB	Summit Black	TAB	75	TAB	false}
+	summitslide	TAB	Summit Slide	TAB	60	TAB	false}
+	sunvalley	TAB	Sun Valley	TAB	75	TAB	true}
+	thechutes	TAB	The Chutes	TAB	95	TAB	false}
+	tirol	TAB	Tirol	TAB	50	TAB	true}
+	thulkes	TAB	Thulkes	TAB	85	TAB	false}
+	village	TAB	Village	TAB	70	TAB	true}
+	vista	TAB	Vista	TAB	55	TAB	true}
+	waler	TAB	Waler	TAB	55	TAB	false}
+	wattlewiggle	TAB	Wattle Wiggle	TAB	70	TAB	false}
+	wenzelsweave	TAB	Wenzels Weave	TAB	50	TAB	false}
+	whiskeycreektrail	TAB	Whiskey Creek Trail	TAB	40	TAB	true}
+	windlessmarissa	TAB	Windless Marissa	TAB	55	TAB	false}
+	womensdownhill	TAB	Women's Downhill	TAB	75	TAB	true}
+	wombat	TAB	Wombat	TAB	50	TAB	true}
+	wombatbottomroad	TAB	Wombat Bottom Road	TAB	70	TAB	false}
+	wombatmidroad	TAB	Wombat Mid Road	TAB	70	TAB	true}
+	woodrun	TAB	Wood Run	TAB	78	TAB	true}
+	yurredla	TAB	Yurredla	TAB	75	TAB	false}
+	zwierszigzag	TAB	Zwier's Zig Zag	TAB	80	TAB	false}
